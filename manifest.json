@@ -1,0 +1,19 @@
+{
+    "manifest_version": 3,
+    "name": "Picmix - расширение для загрузки Gif изображений!",
+    "version": "1.0",
+    "description": "",
+    "content_scripts": [
+        {
+            "matches": ["*://*.picmix.com/*"],
+            "js": ["resources/popup.js"]
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": ["resources/button.html"],
+            "matches": ["*://*.picmix.com/*"]
+        }
+    ],
+    "permissions": []
+}
