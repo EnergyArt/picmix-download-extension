@@ -1,11 +1,57 @@
-<div style="
-    width: 100px;
-    height: 100px;
-    background-color: aqua;
-">
-    <button style="
-        
-    ">
-        Скачать
-    </button>
+<div class="mk-download-container">
+    <div class="mk-download-button">
+        <button onclick="getGif()">Загрузить</button>
+        <div class="mk-download-button-outline" />
+    </div>
 </div>
+
+<style>
+    .mk-download-container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        position: absolute;
+        width: 66px;
+        height: 66px;
+    
+        pointer-events: none;
+    }
+    .mk-download-button {
+        position: relative;
+        top: 23px;
+        display: flex; 
+        align-items: center; 
+        justify-content: center;
+        z-index: 10;
+    }
+    .mk-download-button button {
+        background-color: #ffffff;
+        padding: 5px 15px;
+        color: #555;
+        font-weight: bold;
+        border: 0px;
+        border-radius: 8px;
+        
+        pointer-events: all;
+        cursor: pointer;
+        transition: all 0.25s ease;
+        box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);
+    }
+    .mk-download-button .mk-download-button-outline {
+        position: absolute;
+        top: -5px;
+        left: -6px;
+        right: -6px;
+        bottom: -5px;
+        border: 3px solid #ff05a800;
+        border-radius: 12px;
+        transition: all 0.4s ease;
+    }
+    .mk-download-button button:hover {
+        background-color: #f5f5f5;
+    }
+    .mk-download-button button:hover + .mk-download-button-outline {
+        border-color: #ff05a8;
+        transform: scale(1.03);
+    }
+</style>

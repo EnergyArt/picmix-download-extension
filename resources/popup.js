@@ -1,4 +1,4 @@
-alert("Расширение определило сайт");
+// alert("Расширение определило сайт");
 
 async function loadHtmlSnippet() {
   try {
@@ -15,15 +15,15 @@ document.addEventListener("mouseover", async (event) => {
   const target = event.target.closest(".mk-stamp-preview");
   
   if (target && !target.dataset.extended) {
-    // target.dataset.extended = "true";
+    target.dataset.extended = "true";
     const button = await loadHtmlSnippet();
 
-    const box = document.createElement("div");
-    box.innerHTML = button;
-    target.appendChild(box);
+    target.insertAdjacentHTML("beforeend", button);
+    const box = target.lastElementChild;
 
     target.addEventListener("mouseleave", () => {
       box.remove();
-    }, { once: true });
+      delete target.dataset.extended;
+    });
   }
 });
