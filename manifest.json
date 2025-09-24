@@ -6,13 +6,16 @@
     "content_scripts": [
         {
             "matches": ["*://*.picmix.com/*"],
-            "js": ["resources/popup.js"]
+            "js": [
+                "resources/content.js", 
+                "resources/download.js"
+            ]
         }
     ],
     "web_accessible_resources": [
         {
-            "resources": ["resources/button.html"],
-            "matches": ["*://*.picmix.com/*"]
+            "matches": ["*://*.picmix.com/*"],
+            "resources": ["resources/button.html"]
         }
     ],
     "permissions": []

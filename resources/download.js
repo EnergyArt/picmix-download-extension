@@ -1,4 +1,4 @@
 
-function getGif() {
-    
+function getGif(stamp) {
+    console.log(stamp);
 }
