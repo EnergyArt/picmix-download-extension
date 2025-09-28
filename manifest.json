@@ -3,12 +3,17 @@
     "name": "Picmix - расширение для загрузки Gif изображений!",
     "version": "1.0",
     "description": "",
+    "icons": {
+        "16": "icon.png",
+        "48": "icon.png",
+        "128": "icon.png"
+    },
     "content_scripts": [
         {
             "matches": ["*://*.picmix.com/*"],
             "js": [
-                "resources/content.js", 
-                "resources/download.js"
+                "build/download.bundle.js",
+                "resources/content.js"
             ]
         }
     ],
@@ -18,5 +23,5 @@
             "resources": ["resources/button.html"]
         }
     ],
-    "permissions": []
+    "permissions": ["downloads"]
 }

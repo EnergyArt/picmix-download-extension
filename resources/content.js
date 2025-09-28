@@ -53,7 +53,7 @@ document.addEventListener("mouseover", async (event) => {
           width: parseInt(stamps[stampIndex].width, 0),
           height: parseInt(stamps[stampIndex].height, 0),
           frames: stamps[stampIndex].srcNormal || '',
-          frametimes: stamps[stampIndex].frameTimes || [],
+          frameTimes: stamps[stampIndex].frameTimes || [],
           isAnimated: stamps[stampIndex].isAnimated,
         };
         getGif(gifData);
